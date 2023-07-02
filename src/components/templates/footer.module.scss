@@ -1,0 +1,51 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.footer {
+    @include gradient__background($deg: 0deg);
+    @include shadow__main;
+
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+    @include padding__safe;
+}
+
+.footer__images {
+    position: relative;
+    div:nth-child(1) {
+        width: 125px;
+        height: 120px;
+        z-index: 1;
+        position: absolute;
+        top: -50px;
+        left: 55%;
+        transform: translate(-50%, 0);
+        animation: ease robotHover $animation-duration__main + 1s alternate infinite;
+    }
+    
+    div:nth-child(2) {
+        width: 400px;
+        height: 250px;
+    }
+}
+
+
+@keyframes robotHover {
+    from {
+        transform: translate(-50%, 0);
+    } 
+    to {
+        transform: translate(-50%, -15%);
+    }
+}
+
+
+.footer__form {
+    // height: 100%;
+    width: 400px;
+}

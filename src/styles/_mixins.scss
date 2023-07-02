@@ -1,0 +1,80 @@
+@import "./vars";
+
+// Gradients
+@mixin gradient__background($deg: 171deg, $secondColor: rgb(13, 13, 22)) {
+    background: $background-color__dark;
+    background: -moz-linear-gradient($deg, $background-color__dark 0%,  $secondColor 100%);
+    background: -webkit-linear-gradient($deg, $background-color__dark 0%, $secondColor 100%);
+    background: linear-gradient($deg, $background-color__dark 0%, $secondColor 100%);
+}
+
+@mixin gradient__accent($deg: 171deg, $secondColor: rgba(165, 255, 225, 1)) {
+    background: $background-color__accent;
+    background: -moz-linear-gradient($deg, $background-color__accent 0%, $secondColor 100%);
+    background: -webkit-linear-gradient($deg, $background-color__accent 0%, $secondColor 100%);
+    background: linear-gradient($deg, $background-color__accent 0%, $secondColor 100%);
+}
+
+// @mixin gradient__text($deg: 171deg) {
+//     color: $font-color__accent;
+//     background: -moz-linear-gradient($deg, $font-color__accent 0%, rgba(221,238,68,1) 100%);
+//     background: -webkit-linear-gradient($deg, $font-color__accent 0%, rgba(221,238,68,1) 100%);
+//     background: linear-gradient($deg, $font-color__accent 0%, rgba(221,238,68,1) 100%);
+
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }
+
+// @mixin gradient__white($deg: 171deg) {
+//     background: rgb(255,255,255);
+//     background: -moz-linear-gradient($deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+//     background: -webkit-linear-gradient($deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+//     background: linear-gradient($deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+// }
+
+// Shadow
+@mixin shadow__main {
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,.3);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,.3);
+}
+
+// Text
+@mixin title__h1($font-color: $font-color__light, $weight: 700) {
+    font-size: 4.2rem;
+    font-weight: $weight;
+    color: $font-color;
+}
+
+@mixin title__h2($font-color: $font-color__light, $weight: 600) {
+    font-size: 3.2rem;
+    font-weight: $weight;
+    color: $font-color;
+}
+
+@mixin paragraph__p1($font-color: $font-color__sublight, $weight: 500) {
+    font-size: 2.4rem;
+    font-weight: $weight;
+    color: $font-color;
+    line-height: 20px;
+}
+    
+@mixin paragraph__p2($font-color: $font-color__sublight, $weight: 400) {
+    font-size: 1.8rem;
+    font-weight: $weight;
+    color: $font-color;
+    line-height: 20 px;
+}
+
+@mixin paragraph__p3($font-color: $font-color__sublight, $weight: 300) {
+    font-size: 1.4rem;
+    font-weight: $weight;
+    color: $font-color;
+    line-height: 20px;
+}
+
+// Padding
+@mixin padding__safe {
+    padding: 0 25px;
+    box-sizing: content-box;
+}

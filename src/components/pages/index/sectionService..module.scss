@@ -1,0 +1,64 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+.sectionService {
+
+}
+
+.sectionService__container {
+    @include padding__safe;
+}
+
+.sectionService__table {
+    margin-top: 15px;
+    h2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 45px;
+        padding: 0 $padding__smblock;
+        border-radius: $border-radius__smblock;
+        @include paragraph__p2($weight: 500);
+        // @include gradient__background;
+        transition: ease $transition-duration__hover;
+        background-color: $background-color__dark;
+        box-shadow: $box-shadow__main;
+        cursor: pointer;
+        span:last-child {
+            transition: ease $transition-duration__hover;
+            transform: rotate(0deg);
+        }
+    }
+    ul {
+        max-height: 0px;
+        overflow: hidden;
+        transition: ease $animation-duration__main;
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include paragraph__p2;
+            padding: 0 $padding__smblock;
+            margin-top: 15px;
+        }
+    }
+}
+
+@media (pointer: fine) {
+    .sectionService__table h2:hover {
+        background-color: $background-color__accent;
+        // @include gradient__accent;
+        color: $font-color__light;
+    }
+}
+
+.sectionService__table._active {
+    h2 {
+        span:last-child {
+            transform: rotate(-180deg);
+        }
+    }
+    ul {
+        max-height: 9999px;
+    }
+}

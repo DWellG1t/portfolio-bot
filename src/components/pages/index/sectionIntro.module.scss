@@ -1,0 +1,42 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+.sectionIntro {
+    margin-top: 250px;
+}
+
+.sectionIntro__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectionIntro__images {
+    position: relative;
+    // overflow: visible;
+    div:nth-child(1) {
+        width: 165px;
+        height: 245px;
+        z-index: 1;
+        position: absolute;
+        top: -120px;
+        left: 55%;
+        transform: translate(-50%, 0);
+        animation: ease robotHover $animation-duration__main + 1s alternate infinite;
+    }
+    
+    div:nth-child(2) {
+        width: 400px;
+        height: 250px;
+    }
+}
+
+
+
+@keyframes robotHover {
+    from {
+        transform: translate(-50%, 0);
+    } 
+    to {
+        transform: translate(-50%, -15%);
+    }
+}

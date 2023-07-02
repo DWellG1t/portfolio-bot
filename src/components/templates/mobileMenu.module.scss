@@ -1,0 +1,130 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.mobileMenu {
+
+}
+
+.mobileMenu__fade {
+    display: block;
+    position: fixed;
+    background-color: rgba(0,0,0,.5);
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    transition: ease $animation-duration__main;
+    pointer-events: none;
+}
+
+.mobileMenu__front {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 101;
+    padding: $padding__block;
+    @include gradient__background;
+    @include shadow__main;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: ease $animation-duration__main;
+    transition-delay: .2s;
+    transform: translate(100%, 0);
+}
+
+.mobileMenu._active {
+    .mobileMenu__fade {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .mobileMenu__front {
+        transform: translate(0, 0);
+    }
+
+    .mobileMenu__back {
+        transform: translate(0, 0);
+    }
+}
+
+.mobileMenu__back {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 100;
+    transition: ease $animation-duration__main;
+    transform: translate(100%, 0);
+    @include shadow__main;
+    @include gradient__accent;
+}
+
+.mobileMenu__cross {
+
+}
+
+.mobileMenu__logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobileMenu__menu {
+    text-align: center;
+    li:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    
+    li {
+        position: relative;
+        z-index: 2;
+        @include paragraph__p1;
+        a {
+            color: inherit;
+        }
+            &::before {
+                content: "";
+                display: none;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 50%;
+                transform: translate(0, -50%);
+                border-radius: $border-radius__smblock;
+                padding: $padding__smblock;
+                @include gradient__accent;
+                z-index: -1;
+            }
+    }
+
+    li._active {
+        color: $font-color__light;
+        &::before {
+            display: block;
+        }
+    }
+}
+
+.mobileMenu__contacts {
+    display: flex;
+    flex-direction: column;
+    a:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    a {
+        color: inherit;
+        @include paragraph__p2;
+    }
+}
+
+@keyframes Fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

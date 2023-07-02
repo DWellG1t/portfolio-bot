@@ -1,0 +1,70 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.header {
+    @include paragraph__p2;
+    color: $font-color__sublight;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    @include padding__safe;
+}
+
+.header__logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header__navigation {
+    ul {
+        display: flex;
+        li:not(:last-child) {
+            margin-right: 30px;
+        }
+        a {
+            color: inherit;
+        }
+
+        li {
+            position: relative;
+        }
+
+        
+        li:first-child {
+            color: white;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                height: 20px;
+                width: 100%;
+                padding: 8px;
+                box-sizing: content-box;
+                background-color: $background-color__accent;
+                border-radius: $border-radius__smblock;
+            }
+        }
+    }
+}
+
+.header__contacts {
+    a:first-child {
+        margin-right: 10px;
+        
+    }
+    a {
+        color: inherit;
+    }
+}

@@ -1,0 +1,16 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+.sectionTech {
+}
+
+.sectionTech__slider {
+    >div {
+        transition-timing-function: linear;
+    }
+}
+
+.sectionTech__slide {
+    font-size: 7.2rem;
+    color: $font-color__sublight;
+}
